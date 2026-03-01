@@ -1,8 +1,14 @@
 class GameDatabase {
   constructor() {
-    this.supabaseUrl = (window.APP_CONFIG && window.APP_CONFIG.SUPABASE_URL) || '';
-    this.supabaseKey = (window.APP_CONFIG && window.APP_CONFIG.SUPABASE_ANON_KEY) || '';
     this.sessionId = null;
+  }
+
+  get supabaseUrl() {
+    return (window.APP_CONFIG && window.APP_CONFIG.SUPABASE_URL) || '';
+  }
+
+  get supabaseKey() {
+    return (window.APP_CONFIG && window.APP_CONFIG.SUPABASE_ANON_KEY) || '';
   }
 
   get enabled() {

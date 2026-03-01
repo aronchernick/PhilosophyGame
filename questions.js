@@ -639,5 +639,5 @@ const RESULT_GIFS = {
   political: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjhpcXUxd2JzNHBkbG16NHd2cXNvc2Vjemg1dDE5ZnloMXU1NDBwdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ZXwppK51PjNTQp8ILO/giphy.gif",
   metaphysics: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2x1cXU2ZjN0NDl2ZWd3cmR3aDg0bmMzbGZndmEycDR2bDVieW1xbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/OK27wINdQS5YQ/giphy.gif",
   epistemology: "https://media.giphy.com/media/3og0ITQOC5wlyk8ffy/giphy.gif",
-  aesthetics: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXBocDc3bHJqMHV1aW1lb29sbGNkcWU0OWsyOGl0bDN2eXd6amE5OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cu5WadRPu2Ilb4nLeM/giphy.gif
+  aesthetics: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXBocDc3bHJqMHV1aW1lb29sbGNkcWU0OWsyOGl0bDN2eXd6amE5OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cu5WadRPu2Ilb4nLeM/giphy.gif"
 };

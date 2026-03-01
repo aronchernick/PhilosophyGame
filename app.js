@@ -26,6 +26,16 @@ class PhilosophyGame {
     gameDB.trackEvent('page_load');
   }
 
+  async ensureConfigReady() {
+    if (window.loadAppConfig && typeof window.loadAppConfig.then === 'function') {
+      try {
+        await window.loadAppConfig;
+      } catch {
+        // no-op
+      }
+    }
+  }
+
   bindEvents() {
     document.getElementById('start-btn').addEventListener('click', () => this.startGame());
     document.getElementById('like-btn').addEventListener('click', () => this.respond(true));
@@ -37,7 +47,8 @@ class PhilosophyGame {
     document.getElementById('tab-results').addEventListener('click', () => this.switchTab('results'));
     document.getElementById('tab-stats').addEventListener('click', () => this.switchTab('stats'));
 
-    document.getElementById('email-btn').addEventListener('click', () => {
+    document.getElementById('email-btn').addEventListener('click', async () => {
+      await this.ensureConfigReady();
       const email = (window.APP_CONFIG && window.APP_CONFIG.DEVELOPER_EMAIL) || '';
       if (!email) {
         alert('Developer email is not configured yet.');
@@ -77,6 +88,8 @@ class PhilosophyGame {
   }
 
   async startGame() {
+    await this.ensureConfigReady();
+
     this.currentIndex = 0;
     this.responses = [];
     this.askedIds = new Set();

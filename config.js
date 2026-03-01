@@ -1,5 +1,22 @@
 window.APP_CONFIG = {
-  SUPABASE_URL: 'https://lxahodghcmqklyfhwglq.supabase.co',
-  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx4YWhvZGdoY21xa2x5Zmh3Z2xxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIzNDUyNzksImV4cCI6MjA4NzkyMTI3OX0.yZcU9Qhu5vEhpqRyTO2oO7da6ZJanzon5aDST1GRZLM',
-  DEVELOPER_EMAIL: 'ahronchernick12f@gmail.com'
+  ...(window.APP_CONFIG || {}),
+  SUPABASE_URL: (window.APP_CONFIG && window.APP_CONFIG.SUPABASE_URL) || '',
+  SUPABASE_ANON_KEY: (window.APP_CONFIG && window.APP_CONFIG.SUPABASE_ANON_KEY) || '',
+  DEVELOPER_EMAIL: (window.APP_CONFIG && window.APP_CONFIG.DEVELOPER_EMAIL) || ''
 };
+
+window.loadAppConfig = window.loadAppConfig || (async () => {
+  try {
+    const res = await fetch('/api/config', { cache: 'no-store' });
+    if (!res.ok) return window.APP_CONFIG;
+
+    const runtimeConfig = await res.json();
+    window.APP_CONFIG = {
+      ...(window.APP_CONFIG || {}),
+      ...(runtimeConfig || {})
+    };
+    return window.APP_CONFIG;
+  } catch {
+    return window.APP_CONFIG;
+  }
+})();
