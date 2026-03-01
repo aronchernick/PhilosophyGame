@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Philosophy Game — Discover Your Philosophical Preference</title>
+  <meta name="description" content="A quick interactive quiz that reveals which branches of philosophy resonate with you most. Get personalized book recommendations and see how you compare to other thinkers.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="start-screen" class="screen">
+    <button id="email-btn" class="btn btn-email-corner" aria-label="Email the developer" title="Email the developer">✉️</button>
+    <div class="start-container">
+      <div class="start-icon">🏛️</div>
+      <h1 class="start-title">Philosophy Game</h1>
+      <p class="start-subtitle">Find out which branches of philosophy speak to you</p>
+      <div class="start-description">
+        <p>Philosophy isn't one thing; it's different ways of questioning the world.</p>
+        <p>You'll see 20 thought experiments and dilemmas and answer one simple prompt:</p>
+        <p>Did you enjoy thinking about this question?</p>
+      </div>
+      <div class="branch-preview">
+        <span class="branch-pill" style="--pill-color: #e74c3c">⚖️ Ethics</span>
+        <span class="branch-pill" style="--pill-color: #3498db">🧩 Logic</span>
+        <span class="branch-pill" style="--pill-color: #9b59b6">🏛️ Political</span>
+        <span class="branch-pill" style="--pill-color: #1abc9c">🌌 Metaphysics</span>
+        <span class="branch-pill" style="--pill-color: #f39c12">🔍 Epistemology</span>
+        <span class="branch-pill" style="--pill-color: #e91e63">🎨 Aesthetics</span>
+      </div>
+      <button id="start-btn" class="btn btn-primary btn-large">
+        Begin Your Journey
+        <span class="btn-arrow">→</span>
+      </button>
+      <div class="start-footer">
+        <a href="https://buymeacoffee.com/aaronchernick" target="_blank" rel="noopener" class="btn btn-coffee-pill">☕ Buy Me a Coffee</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="game-screen" class="screen hidden">
+    <div class="game-header">
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <div class="game-header-row">
+        <span id="card-count" class="card-count">1 / 20</span>
+        <button id="finish-btn" class="btn btn-finish">Finish Now →</button>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div id="question-card" class="question-card">
+        <div id="card-branch" class="card-branch">⚖️ Ethics</div>
+        <p id="card-text" class="card-text"></p>
+        <p id="card-context" class="card-context"></p>
+      </div>
+    </div>
+
+    <div class="action-prompt">Do you like the question?</div>
+
+    <div class="action-buttons">
+      <button id="dislike-btn" class="btn btn-dislike"><span class="btn-icon">👎</span></button>
+      <button id="like-btn" class="btn btn-like"><span class="btn-icon">👍</span></button>
+    </div>
+
+    <div class="keyboard-hint">← Left arrow: no · Right arrow: yes →</div>
+  </div>
+
+  <div id="results-screen" class="screen hidden">
+    <div class="results-container">
+      <div class="results-tabs">
+        <button id="tab-results" class="tab-btn tab-active">Your Results</button>
+        <button id="tab-stats" class="tab-btn">Stats & Insights</button>
+      </div>
+
+      <div id="results-tab-content" class="tab-content">
+        <div class="results-header">
+          <h2 class="results-label">Your Philosophical Identity</h2>
+          <h1 id="type-title" class="type-title">The Moral Skeptic</h1>
+          <p id="type-subtitle" class="type-subtitle">Ethics · Epistemology</p>
+        </div>
+
+        <div class="result-gif-container">
+          <img id="result-gif" class="result-gif" src="" alt="Your philosopher character" />
+        </div>
+
+        <p id="type-description" class="type-description"></p>
+
+        <div class="stats-section">
+          <h3 class="stats-title">📊 Your Philosophy Breakdown</h3>
+          <p id="total-stats" class="total-stats"></p>
+          <div id="branch-stats" class="branch-stats"></div>
+        </div>
+
+        <div class="books-section">
+          <h3 class="stats-title">📚 Your Reading List</h3>
+          <p class="books-intro">Three books from your dominant branch and two from your secondary branch.</p>
+          <div id="book-recommendations" class="book-list"></div>
+        </div>
+
+        <button id="play-again-btn" class="btn btn-primary btn-large">Play Again <span class="btn-arrow">↻</span></button>
+      </div>
+
+      <div id="stats-tab-content" class="tab-content hidden">
+        <div class="stats-page">
+          <div class="stats-section">
+            <h3 class="stats-title">🧠 Your Session</h3>
+            <div class="stat-grid">
+              <div class="stat-card"><div class="stat-value" id="stat-duration">—</div><div class="stat-label">Time to finish</div></div>
+              <div class="stat-card"><div class="stat-value" id="stat-same-primary">—</div><div class="stat-label">share your dominant branch</div></div>
+              <div class="stat-card"><div class="stat-value" id="stat-same-combo">—</div><div class="stat-label">share your exact combo</div></div>
+            </div>
+          </div>
+
+          <div class="stats-section">
+            <h3 class="stats-title">⏱️ Questions You Took Longest On</h3>
+            <div id="user-slowest-questions" class="stat-list"></div>
+          </div>
+
+          <div class="stats-section">
+            <h3 class="stats-title">🌍 Global Stats</h3>
+            <div class="stat-grid">
+              <div class="stat-card"><div class="stat-value" id="stat-total-hits">—</div><div class="stat-label">total site visits</div></div>
+              <div class="stat-card"><div class="stat-value" id="stat-total-starts">—</div><div class="stat-label">clicked start</div></div>
+              <div class="stat-card"><div class="stat-value" id="stat-total-finishes">—</div><div class="stat-label">reached results</div></div>
+              <div class="stat-card"><div class="stat-value" id="stat-total-replays">—</div><div class="stat-label">played again</div></div>
+              <div class="stat-card"><div class="stat-value" id="stat-avg-questions">—</div><div class="stat-label">avg questions completed</div></div>
+            </div>
+          </div>
+
+          <div class="stats-section">
+            <h3 class="stats-title">🔥 Most Popular Answer (All Users)</h3>
+            <div id="global-most-popular" class="stat-list"></div>
+          </div>
+
+          <div class="stats-section">
+            <h3 class="stats-title">🧊 Least Popular Answer (All Users)</h3>
+            <div id="global-least-popular" class="stat-list"></div>
+          </div>
+
+          <div class="stats-section">
+            <h3 class="stats-title">🐢 Longest Questions Across All Users</h3>
+            <div id="global-slowest-questions" class="stat-list"></div>
+          </div>
+        </div>
+
+        <button id="play-again-btn-2" class="btn btn-primary btn-large">Play Again <span class="btn-arrow">↻</span></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="config.local.js"></script>
+  <script src="questions.js"></script>
+  <script src="supabase.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

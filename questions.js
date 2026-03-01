@@ -506,107 +506,138 @@ const BRANCHES = {
   aesthetics: { name: "Aesthetics", color: "#e91e63", icon: "🎨" }
 };
 
-// Philosopher types based on preferences
-// Axes:
-// R vs E — Rationalist vs Empiricist (logic + epistemology)
-// I vs M — Idealist vs Materialist (metaphysics)
-// A vs E — Altruist vs Egoist (ethics)
-// C vs L — Communitarian vs Libertarian (political)
-const PHILOSOPHER_TYPES = {
-  "RIAC": {
-    title: "The Enlightened Guardian",
-    subtitle: "Rationalist · Idealist · Altruist · Communitarian",
-    description: "You believe in reason, higher truths, helping others, and building a just society. Think Plato meets Kant — you'd design a perfect republic run by philosopher-kings and universal moral laws. You trust logic over feelings and believe we can reason our way to a better world.",
-    gif: "https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif"
+// Branch descriptions for results
+const BRANCH_DESCRIPTIONS = {
+  ethics: {
+    name: "Ethics",
+    tagline: "The Moralist",
+    description: "You're drawn to questions of right and wrong, duty and consequence. You naturally evaluate the world through a moral lens — weighing fairness, obligation, and the impact of choices on others.",
+    icon: "⚖️",
+    color: "#e74c3c"
   },
-  "RIAL": {
-    title: "The Principled Maverick",
-    subtitle: "Rationalist · Idealist · Altruist · Libertarian",
-    description: "A moral idealist who believes in individual freedom. You think everyone has a duty to help others — but no government should force them. Like Thoreau with a logic textbook. You'd build a utopia, then make attendance voluntary.",
-    gif: "https://media.giphy.com/media/d3mlE7uhX8KFgEmY/giphy.gif"
+  logic: {
+    name: "Logic",
+    tagline: "The Logician",
+    description: "Puzzles, paradoxes, and precision — your mind lights up when structure meets contradiction. You love testing whether arguments actually hold up and catching subtle fallacies others miss.",
+    icon: "🧩",
+    color: "#3498db"
   },
-  "RIEC": {
-    title: "The Strategic Architect",
-    subtitle: "Rationalist · Idealist · Egoist · Communitarian",
-    description: "You're a builder of grand systems who believes in higher truths but isn't naive about self-interest. Think Machiavelli with ideals — you'd create a perfect society, and yes, you'd be running it. For the greater good, of course.",
-    gif: "https://media.giphy.com/media/l0IylOPCNkiqOgMyA/giphy.gif"
+  political: {
+    name: "Political Philosophy",
+    tagline: "The Civic Thinker",
+    description: "You're fascinated by how societies should be organized — who gets power, what's fair, and where the line is between freedom and order.",
+    icon: "🏛️",
+    color: "#9b59b6"
   },
-  "RIEL": {
-    title: "The Rational Egoist",
-    subtitle: "Rationalist · Idealist · Egoist · Libertarian",
-    description: "Ayn Rand would be proud. You trust reason, believe in transcendent principles, look after yourself first, and want maximum freedom. You see the world clearly and think everyone should earn their own way to enlightenment.",
-    gif: "https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif"
+  metaphysics: {
+    name: "Metaphysics",
+    tagline: "The Metaphysician",
+    description: "Reality itself is your playground. Identity, consciousness, time, existence — you're drawn to the biggest questions with no easy answers.",
+    icon: "🌌",
+    color: "#1abc9c"
   },
-  "RMAC": {
-    title: "The People's Philosopher",
-    subtitle: "Rationalist · Materialist · Altruist · Communitarian",
-    description: "You're grounded in reality, care about others, and think society should be organized for the common good. Very Marx-meets-Aristotle energy — you'd use reason and evidence to build systems that actually help people.",
-    gif: "https://media.giphy.com/media/l4FGuhL4U2WSOXsmI/giphy.gif"
+  epistemology: {
+    name: "Epistemology",
+    tagline: "The Epistemologist",
+    description: "You question knowledge itself — how we know what we know, whether certainty is possible, and why we trust what we trust.",
+    icon: "🔍",
+    color: "#f39c12"
   },
-  "RMAL": {
-    title: "The Pragmatic Liberator",
-    subtitle: "Rationalist · Materialist · Altruist · Libertarian",
-    description: "You believe in what's real, care about people, but think freedom is the best way to help them. Like John Stuart Mill — maximize happiness, minimize interference. You'd rather educate than legislate.",
-    gif: "https://media.giphy.com/media/xT0xeJpnrWC3niaWUS/giphy.gif"
-  },
-  "RMEC": {
-    title: "The Power Realist",
-    subtitle: "Rationalist · Materialist · Egoist · Communitarian",
-    description: "Hobbes energy. You see the world as it is — material, competitive, and in need of strong systems. Self-interest is natural, and a well-designed society channels it productively. You'd build institutions that work with human nature, not against it.",
-    gif: "https://media.giphy.com/media/3og0ITQOC5wlyk8ffy/giphy.gif"
-  },
-  "RMEL": {
-    title: "The Cold Logician",
-    subtitle: "Rationalist · Materialist · Egoist · Libertarian",
-    description: "Pure reason, hard facts, self-reliance, total freedom. You're the philosopher who actually does the math. No fuzzy feelings, no utopian dreams — just clear thinking and personal responsibility. Think Spock with a libertarian streak.",
-    gif: "https://media.giphy.com/media/xUPGcqaVH1cDeKZTBS/giphy.gif"
-  },
-  "EIAC": {
-    title: "The Empathic Visionary",
-    subtitle: "Empiricist · Idealist · Altruist · Communitarian",
-    description: "You learn from experience, dream of higher truths, care deeply about others, and believe in community. You're the philosopher who volunteers at shelters while reading Hegel. Heart and mind in perfect balance.",
-    gif: "https://media.giphy.com/media/l1J9EdzfOSgfyueLm/giphy.gif"
-  },
-  "EIAL": {
-    title: "The Gentle Rebel",
-    subtitle: "Empiricist · Idealist · Altruist · Libertarian",
-    description: "You trust your experience, believe in something greater, want to help everyone, but refuse to be told how. Gandhi vibes — change the world through example, not force. You're the philosopher at the protest with a flower.",
-    gif: "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif"
-  },
-  "EIEC": {
-    title: "The Intuitive Leader",
-    subtitle: "Empiricist · Idealist · Egoist · Communitarian",
-    description: "You trust your gut, believe in big ideas, look after yourself, and think society needs structure. You lead through charisma and experience. Think a philosophical CEO who reads Marcus Aurelius unironically.",
-    gif: "https://media.giphy.com/media/xTiTnHXbRoaZ1B1Mo8/giphy.gif"
-  },
-  "EIEL": {
-    title: "The Wandering Sage",
-    subtitle: "Empiricist · Idealist · Egoist · Libertarian",
-    description: "Experience is your teacher, you sense deeper truths, you focus on your own path, and you refuse to be constrained. Nietzsche meets Kerouac. You're the philosopher on a motorcycle, searching for meaning on the open road.",
-    gif: "https://media.giphy.com/media/l0MYt5jPR6QX5APm0/giphy.gif"
-  },
-  "EMAC": {
-    title: "The Ground-Level Hero",
-    subtitle: "Empiricist · Materialist · Altruist · Communitarian",
-    description: "Totally grounded, deeply practical, genuinely caring, and committed to community. You're the philosopher who fixes things. No abstract theories — just real solutions for real people. Think a pragmatist social worker with a philosophy degree.",
-    gif: "https://media.giphy.com/media/3ohzdIuqJoo8QdKlnW/giphy.gif"
-  },
-  "EMAL": {
-    title: "The Practical Idealist",
-    subtitle: "Empiricist · Materialist · Altruist · Libertarian",
-    description: "Feet on the ground, heart in the right place, hands off my freedom. You believe the best way to help people is to let them help themselves — with good info and fair chances. Adam Smith's better angel.",
-    gif: "https://media.giphy.com/media/l0Iy69RBOv3hIRyBq/giphy.gif"
-  },
-  "EMEC": {
-    title: "The Survivor Philosopher",
-    subtitle: "Empiricist · Materialist · Egoist · Communitarian",
-    description: "You've learned from life that the world is material, self-interest is real, and strong communities survive. Not cynical — realistic. You'd build a society that accounts for human nature and actually works. Machiavelli with field experience.",
-    gif: "https://media.giphy.com/media/xT0Gqz4x4eLd5gDtaU/giphy.gif"
-  },
-  "EMEL": {
-    title: "The Lone Wolf Thinker",
-    subtitle: "Empiricist · Materialist · Egoist · Libertarian",
-    description: "You trust what you can see and touch, take care of yourself first, and want to be left alone. Diogenes in a barrel, but by choice. The world is what it is — you see it clearly and navigate it on your own terms.",
-    gif: "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif"
+  aesthetics: {
+    name: "Aesthetics",
+    tagline: "The Aesthete",
+    description: "Beauty, art, taste, and meaning — you're captivated by what makes things matter beyond the purely logical.",
+    icon: "🎨",
+    color: "#e91e63"
   }
+};
+
+// Combination labels for primary + secondary pairs
+const COMBO_LABELS = {
+  "Ethics-Logic": "The Principled Analyst",
+  "Ethics-political": "The Justice Seeker",
+  "Ethics-Metaphysics": "The Moral Philosopher",
+  "Ethics-Epistemology": "The Moral Skeptic",
+  "Ethics-Aesthetics": "The Moral Romantic",
+  "Logic-Ethics": "The Analytical Moralist",
+  "Logic-Political": "The Systems Architect",
+  "Logic-Metaphysics": "The Reality Debugger",
+  "Logic-Epistemology": "The Truth Machine",
+  "Logic-Aesthetics": "The Structured Creative",
+  "Political-Ethics": "The Civic Moralist",
+  "Political-Logic": "The Policy Engineer",
+  "Political-Metaphysics": "The Visionary Statesperson",
+  "Political-Epistemology": "The Informed Citizen",
+  "Political-Aesthetics": "The Cultural Critic",
+  "Metaphysics-Ethics": "The Existential Moralist",
+  "Metaphysics-Logic": "The Abstract Reasoner",
+  "Metaphysics-Political": "The Utopian Dreamer",
+  "Metaphysics-Epistemology": "The Deep Doubter",
+  "Metaphysics-Aesthetics": "The Reality Artist",
+  "Epistemology-Ethics": "The Thoughtful Skeptic",
+  "Epistemology-Logic": "The Knowledge Engineer",
+  "Epistemology-Political": "The Critical Citizen",
+  "Epistemology-Metaphysics": "The Philosophical Detective",
+  "Epistemology-Aesthetics": "The Perceptive Artist",
+  "Aesthetics-Ethics": "The Beautiful Mind",
+  "Aesthetics-Logic": "The Elegant Thinker",
+  "Aesthetics-Political": "The Cultural Revolutionary",
+  "Aesthetics-Metaphysics": "The Transcendent Creator",
+  "Aesthetics-Epistemology": "The Perceptive Artist"
+};
+
+// Book recommendations per branch (3 for primary, 2 for secondary)
+const BOOK_RECOMMENDATIONS = {
+  ethics: [
+    { title: "Justice", author: "Michael Sandel", hook: "A practical tour through moral dilemmas that connects ethics to real policy choices.", url: "https://www.amazon.com/s?k=Justice+Michael+Sandel" },
+    { title: "Nicomachean Ethics", author: "Aristotle", hook: "A foundational guide to character, virtue, and what it means to live well.", url: "https://www.amazon.com/s?k=Nicomachean+Ethics+Aristotle" },
+    { title: "Practical Ethics", author: "Peter Singer", hook: "A challenging modern take that forces clear thinking about hard moral tradeoffs.", url: "https://www.amazon.com/s?k=Practical+Ethics+Peter+Singer" },
+    { title: "On Liberty", author: "John Stuart Mill", hook: "A classic argument about freedom, harm, and the limits of social power.", url: "https://www.amazon.com/s?k=On+Liberty+John+Stuart+Mill" },
+    { title: "Groundwork of the Metaphysics of Morals", author: "Immanuel Kant", hook: "A rigorous case for duty and universal moral principles.", url: "https://www.amazon.com/s?k=Groundwork+of+the+Metaphysics+of+Morals+Kant" }
+  ],
+  logic: [
+    { title: "The Art of Logic", author: "Eugenia Cheng", hook: "Shows how formal reasoning improves everyday arguments and decisions.", url: "https://www.amazon.com/s?k=The+Art+of+Logic+Eugenia+Cheng" },
+    { title: "Being Logical", author: "D.Q. McInerny", hook: "A concise, practical handbook for cleaner thinking.", url: "https://www.amazon.com/s?k=Being+Logical+D.Q.+McInerny" },
+    { title: "Gödel, Escher, Bach", author: "Douglas Hofstadter", hook: "A deep and creative journey through logic, systems, and intelligence.", url: "https://www.amazon.com/s?k=Godel+Escher+Bach+Douglas+Hofstadter" },
+    { title: "Logicomix", author: "Apostolos Doxiadis", hook: "A narrative introduction to the drama behind modern logic.", url: "https://www.amazon.com/s?k=Logicomix+Apostolos+Doxiadis" },
+    { title: "How to Prove It", author: "Daniel J. Velleman", hook: "Builds formal proof skills from first principles.", url: "https://www.amazon.com/s?k=How+to+Prove+It+Daniel+Velleman" }
+  ],
+  political: [
+    { title: "A Theory of Justice", author: "John Rawls", hook: "Defines fairness in institutions and remains central to modern political theory.", url: "https://www.amazon.com/s?k=A+Theory+of+Justice+John+Rawls" },
+    { title: "The Republic", author: "Plato", hook: "The original grand blueprint for justice and political order.", url: "https://www.amazon.com/s?k=The+Republic+Plato" },
+    { title: "Anarchy, State, and Utopia", author: "Robert Nozick", hook: "A strong libertarian reply that tests your assumptions about state power.", url: "https://www.amazon.com/s?k=Anarchy+State+and+Utopia+Robert+Nozick" },
+    { title: "The Social Contract", author: "Jean-Jacques Rousseau", hook: "A foundational text on legitimacy, consent, and civic freedom.", url: "https://www.amazon.com/s?k=The+Social+Contract+Rousseau" },
+    { title: "On Tyranny", author: "Timothy Snyder", hook: "A modern, practical guide to protecting democracy and civil institutions.", url: "https://www.amazon.com/s?k=On+Tyranny+Timothy+Snyder" }
+  ],
+  metaphysics: [
+    { title: "The Problems of Philosophy", author: "Bertrand Russell", hook: "A clear doorway into classic questions about reality and identity.", url: "https://www.amazon.com/s?k=The+Problems+of+Philosophy+Bertrand+Russell" },
+    { title: "Meditations", author: "Marcus Aurelius", hook: "A timeless reflection on self, change, and what matters in finite life.", url: "https://www.amazon.com/s?k=Meditations+Marcus+Aurelius" },
+    { title: "Being and Time", author: "Martin Heidegger", hook: "A demanding but transformative exploration of existence.", url: "https://www.amazon.com/s?k=Being+and+Time+Martin+Heidegger" },
+    { title: "Sophie's World", author: "Jostein Gaarder", hook: "A narrative way to absorb big metaphysical ideas quickly.", url: "https://www.amazon.com/s?k=Sophies+World+Jostein+Gaarder" },
+    { title: "Reality Is Not What It Seems", author: "Carlo Rovelli", hook: "Connects modern physics to philosophical questions about what is real.", url: "https://www.amazon.com/s?k=Reality+Is+Not+What+It+Seems+Carlo+Rovelli" }
+  ],
+  epistemology: [
+    { title: "Meditations on First Philosophy", author: "René Descartes", hook: "Starts from radical doubt to rebuild what can count as knowledge.", url: "https://www.amazon.com/s?k=Meditations+on+First+Philosophy+Descartes" },
+    { title: "An Enquiry Concerning Human Understanding", author: "David Hume", hook: "A classic challenge to certainty, causality, and induction.", url: "https://www.amazon.com/s?k=An+Enquiry+Concerning+Human+Understanding+Hume" },
+    { title: "On Certainty", author: "Ludwig Wittgenstein", hook: "Explores the hidden assumptions beneath claims of knowing.", url: "https://www.amazon.com/s?k=On+Certainty+Wittgenstein" },
+    { title: "The Structure of Scientific Revolutions", author: "Thomas Kuhn", hook: "Explains how paradigms shape what a field accepts as truth.", url: "https://www.amazon.com/s?k=The+Structure+of+Scientific+Revolutions+Thomas+Kuhn" },
+    { title: "Epistemology: A Contemporary Introduction", author: "Robert Audi", hook: "A modern map of the field with clear definitions and debates.", url: "https://www.amazon.com/s?k=Epistemology+A+Contemporary+Introduction+Robert+Audi" }
+  ],
+  aesthetics: [
+    { title: "Ways of Seeing", author: "John Berger", hook: "Changes how you interpret art, images, and cultural framing.", url: "https://www.amazon.com/s?k=Ways+of+Seeing+John+Berger" },
+    { title: "The Birth of Tragedy", author: "Friedrich Nietzsche", hook: "A passionate argument for art as a central force in life.", url: "https://www.amazon.com/s?k=The+Birth+of+Tragedy+Nietzsche" },
+    { title: "Art as Experience", author: "John Dewey", hook: "Shows how aesthetics lives in everyday experience, not just museums.", url: "https://www.amazon.com/s?k=Art+as+Experience+John+Dewey" },
+    { title: "On Photography", author: "Susan Sontag", hook: "A sharp analysis of representation, meaning, and visual culture.", url: "https://www.amazon.com/s?k=On+Photography+Susan+Sontag" },
+    { title: "The Aesthetic Brain", author: "Anjan Chatterjee", hook: "Links neuroscience with the psychology of beauty and taste.", url: "https://www.amazon.com/s?k=The+Aesthetic+Brain+Anjan+Chatterjee" }
+  ]
+};
+
+// GIFs mapped by dominant branch
+const RESULT_GIFS = {
+  ethics: "https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif",
+  logic: "https://media.giphy.com/media/xUPGcqaVH1cDeKZTBS/giphy.gif",
+  political: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjhpcXUxd2JzNHBkbG16NHd2cXNvc2Vjemg1dDE5ZnloMXU1NDBwdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ZXwppK51PjNTQp8ILO/giphy.gif",
+  metaphysics: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2x1cXU2ZjN0NDl2ZWd3cmR3aDg0bmMzbGZndmEycDR2bDVieW1xbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/OK27wINdQS5YQ/giphy.gif",
+  epistemology: "https://media.giphy.com/media/3og0ITQOC5wlyk8ffy/giphy.gif",
+  aesthetics: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXBocDc3bHJqMHV1aW1lb29sbGNkcWU0OWsyOGl0bDN2eXd6amE5OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cu5WadRPu2Ilb4nLeM/giphy.gif
 };
