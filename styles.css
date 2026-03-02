@@ -731,6 +731,14 @@ body {
 #play-again-btn-2 {
   display: flex;
   margin: 0 auto;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 600px) {
+  #play-again-btn,
+  #play-again-btn-2 {
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 600px) {

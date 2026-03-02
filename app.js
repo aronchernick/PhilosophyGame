@@ -20,11 +20,12 @@ class PhilosophyGame {
     this.init();
   }
 
-  init() {
-    this.bindEvents();
-    this.showScreen('start-screen');
-    gameDB.trackEvent('page_load');
-  }
+  async init() {
+  this.bindEvents();
+  this.showScreen('start-screen');
+  await this.ensureConfigReady();
+  gameDB.trackEvent('page_load');
+}
 
   async ensureConfigReady() {
   if (window.appReady) {
