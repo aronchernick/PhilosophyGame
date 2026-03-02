@@ -99,6 +99,7 @@ class PhilosophyGame {
     this.startTime = Date.now();
 
     gameDB.trackEvent('start_clicked');
+    if (typeof gtag === 'function') gtag('event', 'game_start');
     await gameDB.createSession();
 
     this.showScreen('game-screen');
@@ -238,6 +239,12 @@ class PhilosophyGame {
     this.switchTab('results');
     this.calculateResults();
     gameDB.trackEvent('results_viewed');
+    if (typeof gtag === 'function') {
+      gtag('event', 'game_complete', {
+        questions_answered: this.responses.length,
+        duration_seconds: this.durationSeconds
+      });
+    }
   }
 
   calculateResults() {
@@ -268,6 +275,14 @@ class PhilosophyGame {
       `${primary.name}. ${primary.description}\n\n   ${secondary.name}. ${secondary.description}`;
 
     document.getElementById('result-gif').src = RESULT_GIFS[this.primaryBranch] || RESULT_GIFS.ethics;
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'result_identity', {
+        primary_branch: this.primaryBranch,
+        secondary_branch: this.secondaryBranch,
+        combo_name: comboName
+      });
+    }
 
     this.renderStats();
     this.renderBooks();
@@ -400,7 +415,7 @@ class PhilosophyGame {
         const avgTime = stats.count > 0 ? stats.totalTime / stats.count : 0;
         return { id, q, likeRate, avgTime, count: stats.count };
       })
-      .filter(item => item.q && item.count >= 2);
+      .filter(item => item.q && item.count >= 1);
 
     this.renderGlobalList('global-most-popular', rows.slice().sort((a, b) => b.likeRate - a.likeRate).slice(0, 3), item => `${Math.round(item.likeRate * 100)}% enjoyed · ${item.count} responses`);
     this.renderGlobalList('global-least-popular', rows.slice().sort((a, b) => a.likeRate - b.likeRate).slice(0, 3), item => `${Math.round(item.likeRate * 100)}% enjoyed · ${item.count} responses`);
@@ -432,6 +447,7 @@ class PhilosophyGame {
 
   async restart() {
     gameDB.trackEvent('play_again');
+    if (typeof gtag === 'function') gtag('event', 'play_again');
     await gameDB.markPlayAgain();
     this.currentIndex = 0;
     this.responses = [];

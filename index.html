@@ -3,13 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Philosophy Game — Discover Your Philosophical Preference</title>
-  <meta name="description" content="A quick interactive quiz that reveals which branches of philosophy resonate with you most. Get personalized book recommendations and see how you compare to other thinkers.">
-  <link rel="stylesheet" href="styles.css">
+  <title>Philosophy Game — Discover Your Philosophical Identity</title>
+  <meta name="description" content="Take a 20-question interactive quiz to discover which branches of philosophy resonate with you most. Get personalized book recommendations, a unique philosopher identity, and compare your results to other thinkers.">
+
+  <!-- SEO -->
+  <meta name="keywords" content="philosophy quiz, philosophy game, ethics, logic, metaphysics, epistemology, aesthetics, political philosophy, thought experiments, philosophy test">
+  <meta name="author" content="Aaron Chernick">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://philosophygame.vercel.app/">
+
+ <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Philosophy Game — Discover Your Philosophical Identity">
+<meta property="og:description" content="A 20-question interactive quiz that reveals which branches of philosophy resonate with you most. Ethics, Logic, Metaphysics, Epistemology, Aesthetics, or Political Philosophy?">
+<meta property="og:url" content="https://philosophygame.dev/">
+<meta property="og:site_name" content="Philosophy Game">
+<meta property="og:image" content="https://philosophygame.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Philosophy Game — Discover your philosophical identity through 20 thought experiments">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Philosophy Game — Discover Your Philosophical Identity">
+<meta name="twitter:description" content="Take a quick quiz to discover which branches of philosophy speak to you. Get personalized book recommendations.">
+<meta name="twitter:image" content="https://philosophygame.dev/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="canonical" href="https://philosophygame.dev/">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#0f0f1a">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>"> -->
+
+  <!-- Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://media.giphy.com">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Philosophy Game",
+    "description": "A 20-question interactive quiz that reveals which branches of philosophy resonate with you most.",
+    "url": "https://philosophygame.vercel.app/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Aaron Chernick"
+    }
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HDSSBSYD1J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HDSSBSYD1J');
+  </script>
 </head>
 <body>
+<noscript>
+  <div style="padding:2em;text-align:center;color:#eee;background:#1a1a2e;min-height:100vh;display:flex;align-items:center;justify-content:center;">
+    <p>Philosophy Game requires JavaScript to run. Please enable JavaScript in your browser settings.</p>
+  </div>
+</noscript>
 <script>
   window.appReady = fetch('/api/config')
     .then(res => res.json())
@@ -34,12 +110,12 @@
         <span class="branch-pill" style="--pill-color: #f39c12">🔍 Epistemology</span>
         <span class="branch-pill" style="--pill-color: #e91e63">🎨 Aesthetics</span>
       </div>
-      <button id="start-btn" class="btn btn-primary btn-large">
+      <button id="start-btn" class="btn btn-primary btn-large" aria-label="Begin the philosophy quiz">
         Begin Your Journey
-        <span class="btn-arrow">→</span>
+        <span class="btn-arrow" aria-hidden="true">→</span>
       </button>
       <div class="start-footer">
-        <a href="https://buymeacoffee.com/aaronchernick" target="_blank" rel="noopener" class="btn btn-coffee-pill">☕ Buy Me a Coffee</a>
+        <a href="https://buymeacoffee.com/aaronchernick" target="_blank" rel="noopener noreferrer" class="btn btn-coffee-pill">☕ Buy Me a Coffee</a>
       </div>
     </div>
   </div>
@@ -66,11 +142,11 @@
     <div class="action-prompt">Do you like the question?</div>
 
     <div class="action-buttons">
-      <button id="dislike-btn" class="btn btn-dislike"><span class="btn-icon">👎</span></button>
-      <button id="like-btn" class="btn btn-like"><span class="btn-icon">👍</span></button>
+      <button id="dislike-btn" class="btn btn-dislike" aria-label="I don't like this question"><span class="btn-icon" aria-hidden="true">👎</span></button>
+      <button id="like-btn" class="btn btn-like" aria-label="I like this question"><span class="btn-icon" aria-hidden="true">👍</span></button>
     </div>
 
-    <div class="keyboard-hint">← Left arrow: no · Right arrow: yes →</div>
+    <div class="keyboard-hint" aria-hidden="true">← Left arrow: no · Right arrow: yes →</div>
   </div>
 
   <div id="results-screen" class="screen hidden">
@@ -88,7 +164,7 @@
         </div>
 
         <div class="result-gif-container">
-          <img id="result-gif" class="result-gif" src="" alt="Your philosopher character" />
+          <img id="result-gif" class="result-gif" src="" alt="Your philosopher character" loading="lazy" />
         </div>
 
         <p id="type-description" class="type-description"></p>
@@ -99,7 +175,7 @@
           <div id="branch-stats" class="branch-stats"></div>
         </div>
 
-<button id="play-again-btn" class="btn btn-primary btn-large">Play Again <span class="btn-arrow">↻</span></button>
+<button id="play-again-btn" class="btn btn-primary btn-large" aria-label="Play the quiz again">Play Again <span class="btn-arrow" aria-hidden="true">↻</span></button>
 
         <div class="books-section">
           <h3 class="stats-title">📚 Your Reading List</h3>
@@ -126,7 +202,7 @@
             <div id="user-slowest-questions" class="stat-list"></div>
           </div>
 
-<button id="play-again-btn-2" class="btn btn-primary btn-large">Play Again <span class="btn-arrow">↻</span></button>
+<button id="play-again-btn-2" class="btn btn-primary btn-large" aria-label="Play the quiz again">Play Again <span class="btn-arrow" aria-hidden="true">↻</span></button>
 
           <div class="stats-section">
             <h3 class="stats-title">🌍 Global Stats</h3>
@@ -165,5 +241,10 @@
   <script src="questions.js"></script>
   <script src="supabase.js"></script>
   <script src="app.js"></script>
+
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <!-- Vercel Speed Insights -->
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
