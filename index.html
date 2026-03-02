@@ -10,7 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
+<script>
+  window.appReady = fetch('/api/config')
+    .then(res => res.json())
+    .then(config => { window.APP_CONFIG = config; });
+</script>
   <div id="start-screen" class="screen">
     <button id="email-btn" class="btn btn-email-corner" aria-label="Email the developer" title="Email the developer">✉️</button>
     <div class="start-container">
@@ -152,7 +156,7 @@
     </div>
   </div>
 
-  <script src="config.js"></script>
+  
   <script src="config.local.js"></script>
   <script src="questions.js"></script>
   <script src="supabase.js"></script>

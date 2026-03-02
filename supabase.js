@@ -30,13 +30,16 @@ class GameDatabase {
     try {
       const res = await fetch(url, { ...options, headers });
       if (!res.ok) {
-        return null;
-      }
+  const errText = await res.text();
+  console.error('Supabase error:', res.status, errText);
+  return null;
+}
       const text = await res.text();
       return text ? JSON.parse(text) : null;
-    } catch {
-      return null;
-    }
+    } catch (err) {
+  console.error('Supabase fetch error:', err);
+  return null;
+}
   }
 
   async trackEvent(event) {

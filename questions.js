@@ -84,6 +84,86 @@ const QUESTIONS = [
     likeText: "Return it",
     dislikeText: "Keep it"
   },
+  {
+    id: "eth11",
+    branch: "ethics",
+    text: "You witness a stranger shoplifting food from a grocery store. Do you report them?",
+    context: "Necessity vs. Law — when survival conflicts with social rules.",
+    likeText: "Report them",
+    dislikeText: "Look away"
+  },
+  {
+    id: "eth12",
+    branch: "ethics",
+    text: "A self-driving car must choose: swerve to kill one pedestrian or stay straight and kill five. Who should program that decision — and how?",
+    context: "Algorithmic Ethics — when machines must make moral choices.",
+    likeText: "Program to save the most",
+    dislikeText: "It shouldn't decide"
+  },
+  {
+    id: "eth13",
+    branch: "ethics",
+    text: "You can save one person you love or five strangers. Does love justify choosing the one?",
+    context: "Partiality vs. Impartiality — do our relationships create special moral duties?",
+    likeText: "Save the one I love",
+    dislikeText: "Save the five strangers"
+  },
+  {
+    id: "eth14",
+    branch: "ethics",
+    text: "A terminally ill patient in agony begs their doctor for a lethal dose of medication. Should the doctor provide it?",
+    context: "Euthanasia — autonomy, mercy, and the limits of medical duty.",
+    likeText: "Honor their wish",
+    dislikeText: "Never end a life"
+  },
+  {
+    id: "eth15",
+    branch: "ethics",
+    text: "You can donate a kidney and save a stranger's life at significant risk and pain to yourself. Are you morally obligated to?",
+    context: "Supererogation — the line between duty and sainthood.",
+    likeText: "It's my obligation",
+    dislikeText: "It's above and beyond"
+  },
+  {
+    id: "eth16",
+    branch: "ethics",
+    text: "A whistleblower leaks classified documents that expose government corruption — but also endanger lives. Were they right to do it?",
+    context: "Whistleblowing — public interest vs. personal loyalty and consequences.",
+    likeText: "Truth had to come out",
+    dislikeText: "Too dangerous to justify"
+  },
+  {
+    id: "eth17",
+    branch: "ethics",
+    text: "You're a judge sentencing someone who committed a terrible crime out of genuine desperation. The law demands 10 years. Do you follow the law?",
+    context: "Equity vs. Law — when justice and the legal system diverge.",
+    likeText: "Follow the law",
+    dislikeText: "Show mercy"
+  },
+  {
+    id: "eth18",
+    branch: "ethics",
+    text: "You could save 1,000 lives in a faraway country by donating your life savings. Are you morally required to?",
+    context: "Effective Altruism — how far does moral obligation actually extend?",
+    likeText: "Yes, I'm obligated",
+    dislikeText: "That's too much to ask"
+  },
+  {
+    id: "eth19",
+    branch: "ethics",
+    text: "A friend tells you something in confidence, then you learn it's putting someone else in danger. Do you break their trust?",
+    context: "Confidentiality vs. Harm Prevention — the ethics of secrets.",
+    likeText: "Break the confidence",
+    dislikeText: "Honor the trust"
+  },
+  {
+    id: "eth20",
+    branch: "ethics",
+    text: "Is it ever ethical to lie to make someone feel better — even if they'd want to know the truth?",
+    context: "White Lies — when honesty conflicts with compassion.",
+    likeText: "Kindness over honesty",
+    dislikeText: "Truth always"
+  },
 
   // ===== LOGIC =====
   {
@@ -166,6 +246,87 @@ const QUESTIONS = [
     likeText: "Still the same ship",
     dislikeText: "It's a new ship"
   },
+  {
+    id: "log11",
+    branch: "logic",
+    text: "\"If you're not with us, you're against us.\" Is this a valid way to frame a disagreement?",
+    context: "False Dichotomy — when a binary framing hides a spectrum of options.",
+    likeText: "Sometimes it's that simple",
+    dislikeText: "There's always a middle ground"
+  },
+  {
+    id: "log12",
+    branch: "logic",
+    text: "A politician says: \"Crime rose after we cut police funding, therefore the cuts caused the crime.\" Is that a sound argument?",
+    context: "Post Hoc Fallacy — correlation mistaken for causation.",
+    likeText: "Sounds reasonable",
+    dislikeText: "Correlation isn't causation"
+  },
+  {
+    id: "log13",
+    branch: "logic",
+    text: "\"This painkiller is safe — it's been used for centuries.\" Does tradition make something trustworthy?",
+    context: "Appeal to Tradition — the assumption that old equals reliable.",
+    likeText: "Time-tested counts for something",
+    dislikeText: "Age proves nothing"
+  },
+  {
+    id: "log14",
+    branch: "logic",
+    text: "Can a statement be both true and false at the same time, in the same sense?",
+    context: "Law of Non-Contradiction — the bedrock of classical logic.",
+    likeText: "Never — logic forbids it",
+    dislikeText: "Some paradoxes break the rule"
+  },
+  {
+    id: "log15",
+    branch: "logic",
+    text: "You flip a fair coin and get heads ten times in a row. Is tails now more likely on the next flip?",
+    context: "The Gambler's Fallacy — misreading probability and independence.",
+    likeText: "Tails is overdue",
+    dislikeText: "Still 50/50 every time"
+  },
+  {
+    id: "log16",
+    branch: "logic",
+    text: "\"Nobody has ever proven ghosts don't exist — so they might.\" Is absence of evidence evidence of absence?",
+    context: "Argument from Ignorance — when lack of disproof becomes proof.",
+    likeText: "Unproven doesn't mean impossible",
+    dislikeText: "Absence of proof matters"
+  },
+  {
+    id: "log17",
+    branch: "logic",
+    text: "Every rule has an exception. But if that's a rule, does it have an exception too?",
+    context: "Self-Defeating Statements — when a claim undermines itself.",
+    likeText: "It's a genuine paradox",
+    dislikeText: "It's just a figure of speech"
+  },
+  {
+    id: "log18",
+    branch: "logic",
+    text: "A detective concludes: \"The butler is the most likely suspect, therefore the butler did it.\" Is that valid reasoning?",
+    context: "Jumping to Conclusions — the gap between likelihood and proof.",
+    likeText: "Most likely is good enough",
+    dislikeText: "Likely isn't certain"
+  },
+  {
+    id: "log19",
+    branch: "logic",
+    text: "Can an omnipotent being create a rock so heavy that even they can't lift it?",
+    context: "The Omnipotence Paradox — when absolute power contradicts itself.",
+    likeText: "Yes — omnipotence means anything",
+    dislikeText: "No — it's a logical contradiction"
+  },
+  {
+    id: "log20",
+    branch: "logic",
+    text: "\"I know one thing: that I know nothing.\" Is this statement itself a form of knowledge?",
+    context: "Socratic Paradox — self-referential claims about the limits of knowing.",
+    likeText: "Yes, it's meaningful knowledge",
+    dislikeText: "It contradicts itself"
+  },
+
 
   // ===== POLITICAL PHILOSOPHY =====
   {
@@ -247,6 +408,252 @@ const QUESTIONS = [
     context: "Open Borders Debate — national sovereignty vs. human freedom.",
     likeText: "Open all borders",
     dislikeText: "Nations decide"
+  },
+  
+  // ===== ETHICS (eth11–eth20) =====
+  {
+    id: "eth11",
+    branch: "ethics",
+    text: "You witness a stranger shoplifting food from a grocery store. Do you report them?",
+    context: "Necessity vs. Law — when survival conflicts with social rules.",
+    likeText: "Report them",
+    dislikeText: "Look away"
+  },
+  {
+    id: "eth12",
+    branch: "ethics",
+    text: "A self-driving car must choose: swerve to kill one pedestrian or stay straight and kill five. Who should program that decision — and how?",
+    context: "Algorithmic Ethics — when machines must make moral choices.",
+    likeText: "Program to save the most",
+    dislikeText: "It shouldn't decide"
+  },
+  {
+    id: "eth13",
+    branch: "ethics",
+    text: "You can save one person you love or five strangers. Does love justify choosing the one?",
+    context: "Partiality vs. Impartiality — do our relationships create special moral duties?",
+    likeText: "Save the one I love",
+    dislikeText: "Save the five strangers"
+  },
+  {
+    id: "eth14",
+    branch: "ethics",
+    text: "A terminally ill patient in agony begs their doctor for a lethal dose of medication. Should the doctor provide it?",
+    context: "Euthanasia — autonomy, mercy, and the limits of medical duty.",
+    likeText: "Honor their wish",
+    dislikeText: "Never end a life"
+  },
+  {
+    id: "eth15",
+    branch: "ethics",
+    text: "You can donate a kidney and save a stranger's life at significant risk and pain to yourself. Are you morally obligated to?",
+    context: "Supererogation — the line between duty and sainthood.",
+    likeText: "It's my obligation",
+    dislikeText: "It's above and beyond"
+  },
+  {
+    id: "eth16",
+    branch: "ethics",
+    text: "A whistleblower leaks classified documents that expose government corruption — but also endanger lives. Were they right to do it?",
+    context: "Whistleblowing — public interest vs. personal loyalty and consequences.",
+    likeText: "Truth had to come out",
+    dislikeText: "Too dangerous to justify"
+  },
+  {
+    id: "eth17",
+    branch: "ethics",
+    text: "You're a judge sentencing someone who committed a terrible crime out of genuine desperation. The law demands 10 years. Do you follow the law?",
+    context: "Equity vs. Law — when justice and the legal system diverge.",
+    likeText: "Follow the law",
+    dislikeText: "Show mercy"
+  },
+  {
+    id: "eth18",
+    branch: "ethics",
+    text: "You could save 1,000 lives in a faraway country by donating your life savings. Are you morally required to?",
+    context: "Effective Altruism — how far does moral obligation actually extend?",
+    likeText: "Yes, I'm obligated",
+    dislikeText: "That's too much to ask"
+  },
+  {
+    id: "eth19",
+    branch: "ethics",
+    text: "A friend tells you something in confidence, then you learn it's putting someone else in danger. Do you break their trust?",
+    context: "Confidentiality vs. Harm Prevention — the ethics of secrets.",
+    likeText: "Break the confidence",
+    dislikeText: "Honor the trust"
+  },
+  {
+    id: "eth20",
+    branch: "ethics",
+    text: "Is it ever ethical to lie to make someone feel better — even if they'd want to know the truth?",
+    context: "White Lies — when honesty conflicts with compassion.",
+    likeText: "Kindness over honesty",
+    dislikeText: "Truth always"
+  },
+
+  // ===== LOGIC (log11–log20) =====
+  {
+    id: "log11",
+    branch: "logic",
+    text: "\"If you're not with us, you're against us.\" Is this a valid way to frame a disagreement?",
+    context: "False Dichotomy — when a binary framing hides a spectrum of options.",
+    likeText: "Sometimes it's that simple",
+    dislikeText: "There's always a middle ground"
+  },
+  {
+    id: "log12",
+    branch: "logic",
+    text: "A politician says: \"Crime rose after we cut police funding, therefore the cuts caused the crime.\" Is that a sound argument?",
+    context: "Post Hoc Fallacy — correlation mistaken for causation.",
+    likeText: "Sounds reasonable",
+    dislikeText: "Correlation isn't causation"
+  },
+  {
+    id: "log13",
+    branch: "logic",
+    text: "\"This painkiller is safe — it's been used for centuries.\" Does tradition make something trustworthy?",
+    context: "Appeal to Tradition — the assumption that old equals reliable.",
+    likeText: "Time-tested counts for something",
+    dislikeText: "Age proves nothing"
+  },
+  {
+    id: "log14",
+    branch: "logic",
+    text: "Can a statement be both true and false at the same time, in the same sense?",
+    context: "Law of Non-Contradiction — the bedrock of classical logic.",
+    likeText: "Never — logic forbids it",
+    dislikeText: "Some paradoxes break the rule"
+  },
+  {
+    id: "log15",
+    branch: "logic",
+    text: "You flip a fair coin and get heads ten times in a row. Is tails now more likely on the next flip?",
+    context: "The Gambler's Fallacy — misreading probability and independence.",
+    likeText: "Tails is overdue",
+    dislikeText: "Still 50/50 every time"
+  },
+  {
+    id: "log16",
+    branch: "logic",
+    text: "\"Nobody has ever proven ghosts don't exist — so they might.\" Is absence of evidence evidence of absence?",
+    context: "Argument from Ignorance — when lack of disproof becomes proof.",
+    likeText: "Unproven doesn't mean impossible",
+    dislikeText: "Absence of proof matters"
+  },
+  {
+    id: "log17",
+    branch: "logic",
+    text: "Every rule has an exception. But if that's a rule, does it have an exception too?",
+    context: "Self-Defeating Statements — when a claim undermines itself.",
+    likeText: "It's a genuine paradox",
+    dislikeText: "It's just a figure of speech"
+  },
+  {
+    id: "log18",
+    branch: "logic",
+    text: "A detective concludes: \"The butler is the most likely suspect, therefore the butler did it.\" Is that valid reasoning?",
+    context: "Jumping to Conclusions — the gap between likelihood and proof.",
+    likeText: "Most likely is good enough",
+    dislikeText: "Likely isn't certain"
+  },
+  {
+    id: "log19",
+    branch: "logic",
+    text: "Can an omnipotent being create a rock so heavy that even they can't lift it?",
+    context: "The Omnipotence Paradox — when absolute power contradicts itself.",
+    likeText: "Yes — omnipotence means anything",
+    dislikeText: "No — it's a logical contradiction"
+  },
+  {
+    id: "log20",
+    branch: "logic",
+    text: "\"I know one thing: that I know nothing.\" Is this statement itself a form of knowledge?",
+    context: "Socratic Paradox — self-referential claims about the limits of knowing.",
+    likeText: "Yes, it's meaningful knowledge",
+    dislikeText: "It contradicts itself"
+  },
+
+  // ===== POLITICAL PHILOSOPHY (pol11–pol20) =====
+  {
+    id: "pol11",
+    branch: "political",
+    text: "Should a democracy ever override the will of the majority to protect a minority group?",
+    context: "Tyranny of the Majority — when democratic outcomes conflict with rights.",
+    likeText: "Protect the minority",
+    dislikeText: "Majority rules"
+  },
+  {
+    id: "pol12",
+    branch: "political",
+    text: "A government bans a political party that openly wants to dismantle democracy. Is that justified?",
+    context: "Militant Democracy — can democracy defend itself by limiting itself?",
+    likeText: "Ban them to protect democracy",
+    dislikeText: "All parties must be allowed"
+  },
+  {
+    id: "pol13",
+    branch: "political",
+    text: "Should wealthy nations forgive the debt of poor nations, even if those debts were legally agreed upon?",
+    context: "Global Justice — the ethics of international financial obligation.",
+    likeText: "Forgive the debt",
+    dislikeText: "A deal is a deal"
+  },
+  {
+    id: "pol14",
+    branch: "political",
+    text: "Is it ever justified to go to war to stop a genocide happening in another country?",
+    context: "Humanitarian Intervention — sovereignty vs. the responsibility to protect.",
+    likeText: "Intervene to stop atrocities",
+    dislikeText: "Respect national sovereignty"
+  },
+  {
+    id: "pol15",
+    branch: "political",
+    text: "Should people who commit crimes lose their right to vote, even after serving their sentence?",
+    context: "Civic Punishment — does incarceration extend beyond prison walls?",
+    likeText: "They forfeited that right",
+    dislikeText: "Voting is a basic right"
+  },
+  {
+    id: "pol16",
+    branch: "political",
+    text: "Should the internet be treated as a public utility — regulated like electricity — or a free market product?",
+    context: "Digital Commons — who controls the infrastructure of modern life?",
+    likeText: "Public utility",
+    dislikeText: "Free market"
+  },
+  {
+    id: "pol17",
+    branch: "political",
+    text: "A country's constitution is 200 years old and doesn't reflect modern values. Should it be rewritten from scratch?",
+    context: "Constitutional Change — the tension between stability and progress.",
+    likeText: "Rewrite it for today",
+    dislikeText: "Preserve its foundations"
+  },
+  {
+    id: "pol18",
+    branch: "political",
+    text: "Should a government have the right to censor scientific findings it believes would cause mass panic?",
+    context: "Epistemic Paternalism — when the state decides what truth the public can handle.",
+    likeText: "Protect public stability",
+    dislikeText: "Truth must be free"
+  },
+  {
+    id: "pol19",
+    branch: "political",
+    text: "Universal Basic Income: should every citizen receive a guaranteed income from the state, regardless of employment?",
+    context: "UBI — redefining the social contract in a post-labor economy.",
+    likeText: "Yes, it's a right",
+    dislikeText: "Earn what you get"
+  },
+  {
+    id: "pol20",
+    branch: "political",
+    text: "Should there be a global government with real authority over nations — or does that make tyranny too easy?",
+    context: "World Government — cosmopolitanism vs. national sovereignty.",
+    likeText: "Global governance makes sense",
+    dislikeText: "Too dangerous to centralize"
   },
 
   // ===== METAPHYSICS =====
@@ -330,6 +737,86 @@ const QUESTIONS = [
     likeText: "Same person",
     dislikeText: "New me every day"
   },
+  {
+    id: "met11",
+    branch: "metaphysics",
+    text: "If the universe is infinite, does that mean every possible version of your life is being lived somewhere right now?",
+    context: "The Infinite Universe — what infinity actually implies about possibility.",
+    likeText: "Every version exists",
+    dislikeText: "Infinity doesn't mean everything"
+  },
+  {
+    id: "met12",
+    branch: "metaphysics",
+    text: "Is the self an illusion? Or is there a continuous \"you\" that persists through all your changes?",
+    context: "The Self — Buddhism, Hume, and the bundle theory of identity.",
+    likeText: "There's a real continuous self",
+    dislikeText: "The self is a useful fiction"
+  },
+  {
+    id: "met13",
+    branch: "metaphysics",
+    text: "Could something come from absolute nothing — no space, no time, no laws of physics? Or is \"nothing\" impossible?",
+    context: "Ex Nihilo — the ultimate origin question.",
+    likeText: "Something from nothing is possible",
+    dislikeText: "True nothing is impossible"
+  },
+  {
+    id: "met14",
+    branch: "metaphysics",
+    text: "Is consciousness just brain activity — or is there something it's like to be you that can't be reduced to neurons?",
+    context: "The Hard Problem of Consciousness — qualia and the explanatory gap.",
+    likeText: "Consciousness is brain activity",
+    dislikeText: "There's something irreducible"
+  },
+  {
+    id: "met15",
+    branch: "metaphysics",
+    text: "Could there be a universe with completely different laws of logic — where contradictions are true?",
+    context: "Modal Realism — the nature and limits of possible worlds.",
+    likeText: "Logic could be different elsewhere",
+    dislikeText: "Logic is necessarily universal"
+  },
+  {
+    id: "met16",
+    branch: "metaphysics",
+    text: "When you remember a past event, are you experiencing something real — or constructing a present fiction?",
+    context: "Memory and Reality — the metaphysics of the past.",
+    likeText: "Memory touches the real past",
+    dislikeText: "Memory is always reconstruction"
+  },
+  {
+    id: "met17",
+    branch: "metaphysics",
+    text: "Do causes actually produce effects — or do we just observe things happening in sequence and assume connection?",
+    context: "Causation — Hume's skepticism about the necessity of cause and effect.",
+    likeText: "Causation is real",
+    dislikeText: "We project it onto the world"
+  },
+  {
+    id: "met18",
+    branch: "metaphysics",
+    text: "Is there a fact of the matter about what's happening \"right now\" on the other side of the universe?",
+    context: "Simultaneity — relativity and the metaphysics of the present moment.",
+    likeText: "There's an objective present",
+    dislikeText: "\"Now\" is relative, not absolute"
+  },
+  {
+    id: "met19",
+    branch: "metaphysics",
+    text: "Could a philosophical zombie — a being physically identical to you but with no inner experience — exist?",
+    context: "Philosophical Zombies — testing whether consciousness is over and above the physical.",
+    likeText: "Zombies are conceivable",
+    dislikeText: "No inner life means not identical"
+  },
+  {
+    id: "met20",
+    branch: "metaphysics",
+    text: "Is the universe fine-tuned for life — or do we just notice it because we're here to notice it?",
+    context: "The Anthropic Principle — selection bias in cosmological reasoning.",
+    likeText: "It's genuinely fine-tuned",
+    dislikeText: "We only see what lets us exist"
+  },
 
   // ===== EPISTEMOLOGY =====
   {
@@ -412,6 +899,86 @@ const QUESTIONS = [
     likeText: "Discovered",
     dislikeText: "Invented"
   },
+  {
+    id: "epi11",
+    branch: "epistemology",
+    text: "If two people raised in completely different cultures disagree on a moral fact, is one of them simply wrong?",
+    context: "Moral Epistemology — can cultural context affect access to moral truth?",
+    likeText: "One of them is wrong",
+    dislikeText: "Both can be right in their context"
+  },
+  {
+    id: "epi12",
+    branch: "epistemology",
+    text: "Is there knowledge that humans are simply too cognitively limited to ever understand?",
+    context: "Cognitive Closure — the possibility of permanently unknowable truths.",
+    likeText: "Some things are beyond us",
+    dislikeText: "In principle, anything is knowable"
+  },
+  {
+    id: "epi13",
+    branch: "epistemology",
+    text: "You believe something false your entire life, but it makes you happier and more effective. Was it better not to know the truth?",
+    context: "Epistemic Value — is knowledge always better than useful fiction?",
+    likeText: "Truth matters more than comfort",
+    dislikeText: "A useful belief has real value"
+  },
+  {
+    id: "epi14",
+    branch: "epistemology",
+    text: "Can you ever truly understand someone else's pain — or are you always just projecting your own experience?",
+    context: "The Problem of Other Minds — the limits of empathic knowledge.",
+    likeText: "Genuine understanding is possible",
+    dislikeText: "We only ever know our own experience"
+  },
+  {
+    id: "epi15",
+    branch: "epistemology",
+    text: "If a lie detector were 100% accurate, should its results be admissible as evidence in court?",
+    context: "Technology and Truth — the epistemology of machine-verified knowledge.",
+    likeText: "Perfect accuracy earns trust",
+    dislikeText: "The method still matters"
+  },
+  {
+    id: "epi16",
+    branch: "epistemology",
+    text: "Is it possible to have genuine knowledge about the future — or is all forecasting just educated guessing?",
+    context: "Predictive Knowledge — the epistemological status of forecasts.",
+    likeText: "Some forecasts count as knowledge",
+    dislikeText: "The future can't be known"
+  },
+  {
+    id: "epi17",
+    branch: "epistemology",
+    text: "You read the same book twice, years apart, and it means something completely different. Which reading was correct?",
+    context: "Interpretation — does meaning live in the text or in the reader?",
+    likeText: "One interpretation is more correct",
+    dislikeText: "Both readings are equally valid"
+  },
+  {
+    id: "epi18",
+    branch: "epistemology",
+    text: "Dreams feel completely real while you're in them. What makes waking life more real?",
+    context: "Dreaming and Reality — Descartes' first radical doubt.",
+    likeText: "Waking life is clearly more real",
+    dislikeText: "It's harder to prove than it seems"
+  },
+  {
+    id: "epi19",
+    branch: "epistemology",
+    text: "Should we believe something if it makes our lives better, even without sufficient evidence?",
+    context: "Pragmatism — William James and truth as what works.",
+    likeText: "Useful belief has epistemic value",
+    dislikeText: "Evidence is non-negotiable"
+  },
+  {
+    id: "epi20",
+    branch: "epistemology",
+    text: "A child raised in isolation with no language — do they still have knowledge? Can you think without words?",
+    context: "Language and Thought — the Sapir-Whorf hypothesis and prelinguistic cognition.",
+    likeText: "Knowledge exists without language",
+    dislikeText: "Language is required for real thought"
+  },
 
   // ===== AESTHETICS =====
   {
@@ -493,6 +1060,86 @@ const QUESTIONS = [
     context: "Taste and Criticism — can aesthetic judgment be objectively wrong?",
     likeText: "Taste is subjective",
     dislikeText: "Some art is objectively better"
+  },
+   {
+    id: "aes11",
+    branch: "aesthetics",
+    text: "A building is perfectly functional but visually ugly. Does that make it a design failure?",
+    context: "Form vs. Function — whether beauty is a requirement or a bonus.",
+    likeText: "Ugly design is bad design",
+    dislikeText: "Function is what matters"
+  },
+  {
+    id: "aes12",
+    branch: "aesthetics",
+    text: "Can silence be music? John Cage's 4'33\" is literally just a performer sitting at a piano without playing. Is that a composition?",
+    context: "4'33\" by John Cage — the boundaries of what music can be.",
+    likeText: "Silence is musical",
+    dislikeText: "Music requires sound"
+  },
+  {
+    id: "aes13",
+    branch: "aesthetics",
+    text: "Does knowing the meaning behind a piece of art change how beautiful it is — or should art speak for itself?",
+    context: "Intentionalism — whether the artist's intent is part of the work's meaning.",
+    likeText: "Context changes everything",
+    dislikeText: "Art should stand alone"
+  },
+  {
+    id: "aes14",
+    branch: "aesthetics",
+    text: "A novel written by an algorithm wins a literary prize. Does it deserve it?",
+    context: "Algorithmic Creativity — whether art requires a conscious creator.",
+    likeText: "The writing speaks for itself",
+    dislikeText: "Art needs human intention"
+  },
+  {
+    id: "aes15",
+    branch: "aesthetics",
+    text: "Is there such a thing as objectively bad taste — or is dismissing someone's taste always a form of snobbery?",
+    context: "Aesthetic Elitism — who gets to define cultural value?",
+    likeText: "Some taste is objectively worse",
+    dislikeText: "Judging taste is always snobbery"
+  },
+  {
+    id: "aes16",
+    branch: "aesthetics",
+    text: "Street art gets painted over by the city. Was it ever really art if society didn't sanction it?",
+    context: "Outsider Art — legitimacy, permission, and the definition of art.",
+    likeText: "Legitimacy doesn't make it art",
+    dislikeText: "Without acceptance, it's just graffiti"
+  },
+  {
+    id: "aes17",
+    branch: "aesthetics",
+    text: "Should art that was created to serve propaganda — but is genuinely beautiful — be displayed in museums?",
+    context: "Art and Ideology — can aesthetic value be separated from moral origin?",
+    likeText: "Display it for its beauty",
+    dislikeText: "The ideology taints the art"
+  },
+  {
+    id: "aes18",
+    branch: "aesthetics",
+    text: "Is a perfectly restored ancient statue more beautiful — or less — than one weathered and broken by time?",
+    context: "Wabi-Sabi vs. Restoration — the aesthetics of age, damage, and perfection.",
+    likeText: "Restoration makes it more beautiful",
+    dislikeText: "Time adds its own beauty"
+  },
+  {
+    id: "aes19",
+    branch: "aesthetics",
+    text: "If a piece of music makes you feel nothing, is it because the music failed — or because you did?",
+    context: "Aesthetic Responsiveness — where does the failure of art lie?",
+    likeText: "The music failed to connect",
+    dislikeText: "The listener wasn't open enough"
+  },
+  {
+    id: "aes20",
+    branch: "aesthetics",
+    text: "Fashion is often dismissed as shallow, but it shapes identity, culture, and self-expression. Is fashion art?",
+    context: "Fashion as Art — the boundaries of aesthetic disciplines.",
+    likeText: "Fashion is absolutely art",
+    dislikeText: "Utility disqualifies it"
   }
 ];
 

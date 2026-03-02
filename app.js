@@ -27,14 +27,14 @@ class PhilosophyGame {
   }
 
   async ensureConfigReady() {
-    if (window.loadAppConfig && typeof window.loadAppConfig.then === 'function') {
-      try {
-        await window.loadAppConfig;
-      } catch {
-        // no-op
-      }
+  if (window.appReady) {
+    try {
+      await window.appReady;
+    } catch {
+      // no-op
     }
   }
+}
 
   bindEvents() {
     document.getElementById('start-btn').addEventListener('click', () => this.startGame());
